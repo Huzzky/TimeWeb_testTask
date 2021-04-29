@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import { memo, useLayoutEffect } from 'react'
 import { connect } from 'react-redux'
 import { requestServerList } from '../../../store/action/requestServerList'
+import LabelValuesServer from '../../Atoms/LabelValuesServer'
 import ServerRowForList from './ServerRowForList'
 
 const ServersListContainer = ({ requestServerList, isError, isLoading }) => {
@@ -11,11 +12,11 @@ const ServersListContainer = ({ requestServerList, isError, isLoading }) => {
 
   return isLoading ? (
     <div>
-      <h1>Загрузка</h1>
+      <LabelValuesServer labelText={'Загрузка'} />
     </div>
   ) : isError ? (
     <div>
-      <h1>Ошибка</h1>
+      <LabelValuesServer labelText={'Ошибка'} />
     </div>
   ) : (
     <ServerRowForList />

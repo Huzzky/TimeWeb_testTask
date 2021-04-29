@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import { memo } from 'react'
 import { connect } from 'react-redux'
 import { selectionServerForView } from '../../../store/action/selectionServerForView'
+import LabelValuesServer from '../../Atoms/LabelValuesServer'
 
 const ServerRowForList = ({ serverList, selectServer }) => {
   let internalFuncSelectServer = (id) => {
@@ -10,11 +11,16 @@ const ServerRowForList = ({ serverList, selectServer }) => {
   let rowWithServerNameForServersList = serverList.map((value, index) => {
     return (
       <div key={index} onClick={() => internalFuncSelectServer(index)}>
-        <h1>{value.server_name}</h1>
+        <LabelValuesServer labelText={value.server_name} />
       </div>
     )
   })
-  return <>{rowWithServerNameForServersList}</>
+  return (
+    <>
+      {rowWithServerNameForServersList}
+      <hr />
+    </>
+  )
 }
 
 ServerRowForList.propTypes = {

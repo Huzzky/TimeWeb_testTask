@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types'
 import { memo } from 'react'
 import { connect } from 'react-redux'
+import LabelValues from '../../Atoms/LabelValuesServer'
 
 const UserNameInViewSelectedServer = ({ selectedServer }) => {
   return (
     <div>
-      <h2>User: </h2>
-      <h2>{selectedServer.customer_id}</h2>
+      <LabelValues labelText={'User: '} />
+      <LabelValues labelText={selectedServer.customer_id} />
     </div>
   )
 }

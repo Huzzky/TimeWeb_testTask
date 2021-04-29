@@ -2,13 +2,9 @@ import { memo } from 'react'
 import { connect } from 'react-redux'
 import UserNameInViewSelectedServer from './UserNameInViewSelectedServer'
 import ValuesOfServerWhichCanBeChanged from './ValuesOfServerWhichCanBeChanged'
+import LabelValues from '../../Atoms/LabelValuesServer'
 
-const ViewSelectedServer = ({
-  pageOpenSelectedServer,
-  selectedServer,
-  isError,
-  isLoading,
-}) => {
+const ViewSelectedServer = ({ pageOpenSelectedServer, isError, isLoading }) => {
   return !pageOpenSelectedServer ? (
     isLoading ? (
       <></>
@@ -16,7 +12,7 @@ const ViewSelectedServer = ({
       <></>
     ) : (
       <div>
-        <h1>Выберите сервер</h1>
+        <LabelValues labelText={'Выберите сервер'} />
       </div>
     )
   ) : (
@@ -31,7 +27,6 @@ const mapStateToProps = ({ serverListReducers }) => ({
   pageOpenSelectedServer: serverListReducers.pageOpenSelectedServer,
   isLoading: serverListReducers.isLoading,
   isError: serverListReducers.isError,
-  selectedServer: serverListReducers.selectedServer,
 })
 
 export default memo(connect(mapStateToProps, null)(ViewSelectedServer))

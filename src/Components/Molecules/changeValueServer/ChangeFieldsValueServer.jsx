@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types'
 import { memo } from 'react'
-import { connect } from 'react-redux'
-import { InputWhichCanBeChanged, optionInputWichChange } from '../../../const'
-import { updateValueOfServer } from '../../../store/action/updateValuesOfServer'
+import { InputWhichCanBeChanged } from '../../../const'
 import BtnForCloseFieldsValuesWithoutSave from '../../Atoms/BtnForCloseFieldsValuesWithoutSave'
+import BtnForSaveChangeValueServer from '../../Atoms/BtnForSaveChangeValueServer'
 import SelectOptionTypesServer from '../../Atoms/SelectOptionTypesServer'
 
-const ChangeFieldsValueServer = ({ value, index, updateValueOfServer }) => {
+const ChangeFieldsValueServer = ({ value, index }) => {
   return (
     <div>
       {value[0] === Object.keys(InputWhichCanBeChanged)[1] ? (
@@ -14,13 +13,8 @@ const ChangeFieldsValueServer = ({ value, index, updateValueOfServer }) => {
       ) : (
         <input></input>
       )}
-      <button
-        onClick={() => {
-          updateValueOfServer(index, value[0], optionInputWichChange[1])
-        }}
-      >
-        ok
-      </button>
+      <BtnForSaveChangeValueServer value={value} index={index} />
+
       <BtnForCloseFieldsValuesWithoutSave value={value} index={index} />
     </div>
   )
@@ -28,13 +22,7 @@ const ChangeFieldsValueServer = ({ value, index, updateValueOfServer }) => {
 
 ChangeFieldsValueServer.propTypes = {
   index: PropTypes.number,
-  updateValueOfServer: PropTypes.func,
   value: PropTypes.array,
 }
 
-const mapToDispatch = (dispatch) => ({
-  updateValueOfServer: (id, type, option) =>
-    dispatch(updateValueOfServer(id, type, option)),
-})
-
-export default memo(connect(null, mapToDispatch)(ChangeFieldsValueServer))
+export default memo(ChangeFieldsValueServer)
