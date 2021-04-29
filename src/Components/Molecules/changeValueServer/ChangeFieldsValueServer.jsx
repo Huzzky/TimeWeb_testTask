@@ -3,7 +3,8 @@ import { memo } from 'react'
 import { connect } from 'react-redux'
 import { InputWhichCanBeChanged, optionInputWichChange } from '../../../const'
 import { updateValueOfServer } from '../../../store/action/updateValuesOfServer'
-import { SelectOptionTypesServer } from '../../Atoms/SelectOptionTypesServer'
+import BtnForCloseFieldsValuesWithoutSave from '../../Atoms/BtnForCloseFieldsValuesWithoutSave'
+import SelectOptionTypesServer from '../../Atoms/SelectOptionTypesServer'
 
 const ChangeFieldsValueServer = ({ value, index, updateValueOfServer }) => {
   return (
@@ -20,6 +21,7 @@ const ChangeFieldsValueServer = ({ value, index, updateValueOfServer }) => {
       >
         ok
       </button>
+      <BtnForCloseFieldsValuesWithoutSave value={value} index={index} />
     </div>
   )
 }

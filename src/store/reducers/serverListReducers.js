@@ -32,7 +32,6 @@ export const serverListReducers = (
       return {
         ...state,
         selectedInputWhichChangeValues: state.selectedInputWhichChangeValues.map(
-          // eslint-disable-next-line array-callback-return
           (_, index) => {
             if (index === idSelectedInputWhichChangeValue) {
               return (state.selectedInputWhichChangeValues[
@@ -47,7 +46,6 @@ export const serverListReducers = (
       return {
         ...state,
         selectedInputWhichChangeValues: state.selectedInputWhichChangeValues.map(
-          // eslint-disable-next-line array-callback-return
           (_, index) => {
             if (index === idSelectedInputWhichChangeValue) {
               return (state.selectedInputWhichChangeValues[index] = '')

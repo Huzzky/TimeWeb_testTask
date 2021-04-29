@@ -1,6 +1,7 @@
+import { memo } from 'react'
 import { typesOfServer } from '../../const'
 
-export const SelectOptionTypesServer = () => {
+const SelectOptionTypesServer = () => {
   let optionServerTypeArray = typesOfServer.map((value, index) => {
     return (
       <option key={index} value={value}>
@@ -10,3 +11,5 @@ export const SelectOptionTypesServer = () => {
   })
   return <select>{optionServerTypeArray}</select>
 }
+
+export default memo(SelectOptionTypesServer)
