@@ -10,6 +10,7 @@ const ValuesOfServerWhichCanBeChanged = ({
   selectedServer,
   selectedInputWhichChangeValues,
 }) => {
+  console.log(selectedInputWhichChangeValues)
   let inputWhichCanChangeValuesServer = Object.entries(
     InputWhichCanBeChanged,
   ).map((value, index) => {

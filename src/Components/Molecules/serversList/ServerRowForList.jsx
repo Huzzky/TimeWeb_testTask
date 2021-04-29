@@ -8,6 +8,7 @@ const ServerRowForList = ({ serverList, selectServer }) => {
   let internalFuncSelectServer = (id) => {
     selectServer(id)
   }
+
   let rowWithServerNameForServersList = serverList.map((value, index) => {
     return (
       <div key={index} onClick={() => internalFuncSelectServer(index)}>

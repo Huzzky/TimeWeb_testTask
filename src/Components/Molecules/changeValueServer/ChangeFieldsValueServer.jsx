@@ -14,7 +14,6 @@ const ChangeFieldsValueServer = ({ value, index }) => {
         <input></input>
       )}
       <BtnForSaveChangeValueServer value={value} index={index} />
-
       <BtnForCloseFieldsValuesWithoutSave value={value} index={index} />
     </div>
   )

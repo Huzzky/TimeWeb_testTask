@@ -8,7 +8,7 @@ const BtnForSaveChangeValueServer = ({ value, index, updateValueOfServer }) => {
   return (
     <button
       onClick={() => {
-        updateValueOfServer(index, value[0], optionInputWichChange[1])
+        updateValueOfServer(index, value[0], optionInputWichChange[2])
       }}
     >
       ok

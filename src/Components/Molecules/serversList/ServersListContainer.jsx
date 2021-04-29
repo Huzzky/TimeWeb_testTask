@@ -9,7 +9,6 @@ const ServersListContainer = ({ requestServerList, isError, isLoading }) => {
   useLayoutEffect(() => {
     requestServerList()
   }, [requestServerList])
-
   return isLoading ? (
     <div>
       <LabelValuesServer labelText={'Загрузка'} />

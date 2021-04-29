@@ -29,30 +29,22 @@ export const serverListReducers = (
 ) => {
   switch (type) {
     case OPEN_INPUT_FOR_CHANGE_VALUE_SERVER:
+      state.selectedInputWhichChangeValues[
+        idSelectedInputWhichChangeValue
+      ] = typeSelectedInputWhichChangeValue
       return {
         ...state,
-        selectedInputWhichChangeValues: state.selectedInputWhichChangeValues.map(
-          (_, index) => {
-            if (index === idSelectedInputWhichChangeValue) {
-              return (state.selectedInputWhichChangeValues[
-                index
-              ] = typeSelectedInputWhichChangeValue)
-            }
-            return state.selectedInputWhichChangeValues[index]
-          },
-        ),
+        selectedInputWhichChangeValues: [
+          ...state.selectedInputWhichChangeValues,
+        ],
       }
     case CLOSE_INPUT_FOR_CHANGE_VALUE_SERVER:
+      state.selectedInputWhichChangeValues[idSelectedInputWhichChangeValue] = ''
       return {
         ...state,
-        selectedInputWhichChangeValues: state.selectedInputWhichChangeValues.map(
-          (_, index) => {
-            if (index === idSelectedInputWhichChangeValue) {
-              return (state.selectedInputWhichChangeValues[index] = '')
-            }
-            return state.selectedInputWhichChangeValues[index]
-          },
-        ),
+        selectedInputWhichChangeValues: [
+          ...state.selectedInputWhichChangeValues,
+        ],
       }
     case SELECTION_SERVER_FOR_VIEW:
       return {
