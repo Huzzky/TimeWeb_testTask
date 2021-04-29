@@ -17,11 +17,7 @@ const InputWhichCanBeChanged = {
   server_type: 'server Type',
 }
 
-const typesOfServer = {
-  1: 'vds',
-  2: 'dedicated',
-  3: 'hosting',
-}
+const typesOfServer = ['vds', 'dedicated', 'hosting', 'idle']
 
 const optionInputWichChange = ['open', 'close']
 

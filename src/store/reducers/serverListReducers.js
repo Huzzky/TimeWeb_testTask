@@ -29,32 +29,30 @@ export const serverListReducers = (
 ) => {
   switch (type) {
     case OPEN_INPUT_FOR_CHANGE_VALUE_SERVER:
-      let arrayStateServersInputForOpen = [
-        ...state.selectedInputWhichChangeValues,
-      ]
-      state.selectedInputWhichChangeValues.forEach((_, index) => {
-        if (index === idSelectedInputWhichChangeValue) {
-          arrayStateServersInputForOpen[
-            index
-          ] = typeSelectedInputWhichChangeValue
-        }
-      })
       return {
         ...state,
-        selectedInputWhichChangeValues: [...arrayStateServersInputForOpen],
+        selectedInputWhichChangeValues: state.selectedInputWhichChangeValues.map(
+          (_, index) => {
+            if (index === idSelectedInputWhichChangeValue) {
+              return (state.selectedInputWhichChangeValues[
+                index
+              ] = typeSelectedInputWhichChangeValue)
+            }
+            return -1
+          },
+        ),
       }
     case CLOSE_INPUT_FOR_CHANGE_VALUE_SERVER:
-      let arrayStateServersInputForClose = [
-        ...state.selectedInputWhichChangeValues,
-      ]
-      state.selectedInputWhichChangeValues.forEach((_, index) => {
-        if (index === idSelectedInputWhichChangeValue) {
-          arrayStateServersInputForClose[index] = ''
-        }
-      })
       return {
         ...state,
-        selectedInputWhichChangeValues: [...arrayStateServersInputForClose],
+        selectedInputWhichChangeValues: state.selectedInputWhichChangeValues.map(
+          (_, index) => {
+            if (index === idSelectedInputWhichChangeValue) {
+              return (state.selectedInputWhichChangeValues[index] = '')
+            }
+            return -1
+          },
+        ),
       }
     case SELECTION_SERVER_FOR_VIEW:
       return {
