@@ -1,26 +1,15 @@
 import PropTypes from 'prop-types'
 import { memo } from 'react'
 import { connect } from 'react-redux'
-import {
-  InputWhichCanBeChanged,
-  optionInputWichChange,
-  typesOfServer,
-} from '../../../const'
+import { InputWhichCanBeChanged, optionInputWichChange } from '../../../const'
 import { updateValueOfServer } from '../../../store/action/updateValuesOfServer'
+import { SelectOptionTypesServer } from '../../Atoms/SelectOptionTypesServer'
 
 const ChangeFieldsValueServer = ({ value, index, updateValueOfServer }) => {
-  let optionServerTypeArray = typesOfServer.map((value, index) => {
-    return (
-      <option key={index} value={value}>
-        {value}
-      </option>
-    )
-  })
-
   return (
     <div>
       {value[0] === Object.keys(InputWhichCanBeChanged)[1] ? (
-        <select>{optionServerTypeArray}</select>
+        <SelectOptionTypesServer />
       ) : (
         <input></input>
       )}

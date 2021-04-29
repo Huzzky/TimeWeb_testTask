@@ -32,13 +32,14 @@ export const serverListReducers = (
       return {
         ...state,
         selectedInputWhichChangeValues: state.selectedInputWhichChangeValues.map(
+          // eslint-disable-next-line array-callback-return
           (_, index) => {
             if (index === idSelectedInputWhichChangeValue) {
               return (state.selectedInputWhichChangeValues[
                 index
               ] = typeSelectedInputWhichChangeValue)
             }
-            return -1
+            return state.selectedInputWhichChangeValues[index]
           },
         ),
       }
@@ -46,11 +47,12 @@ export const serverListReducers = (
       return {
         ...state,
         selectedInputWhichChangeValues: state.selectedInputWhichChangeValues.map(
+          // eslint-disable-next-line array-callback-return
           (_, index) => {
             if (index === idSelectedInputWhichChangeValue) {
               return (state.selectedInputWhichChangeValues[index] = '')
             }
-            return -1
+            return state.selectedInputWhichChangeValues[index]
           },
         ),
       }
