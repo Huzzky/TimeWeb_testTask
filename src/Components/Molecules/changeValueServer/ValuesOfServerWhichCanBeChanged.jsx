@@ -10,7 +10,6 @@ const ValuesOfServerWhichCanBeChanged = ({
   selectedServer,
   selectedInputWhichChangeValues,
 }) => {
-  console.log(selectedInputWhichChangeValues)
   let inputWhichCanChangeValuesServer = Object.entries(
     InputWhichCanBeChanged,
   ).map((value, index) => {
@@ -22,8 +21,7 @@ const ValuesOfServerWhichCanBeChanged = ({
           <ChangeFieldsValueServer value={value} index={index} />
         ) : (
           <div>
-            {console.log(selectedServer[value[0]])}
-            <LabelValuesServer labelText={selectedServer[value[0]]} />
+            <LabelValuesServer labelText={selectedServer[0][value[0]]} />
             <BtnForChangeValueServer value={value} index={index} />
           </div>
         )}
@@ -36,7 +34,7 @@ const ValuesOfServerWhichCanBeChanged = ({
 
 ValuesOfServerWhichCanBeChanged.propTypes = {
   selectedInputWhichChangeValues: PropTypes.array,
-  selectedServer: PropTypes.object,
+  selectedServer: PropTypes.array,
 }
 
 const mapStateToProps = ({ serverListReducers }) => ({
@@ -45,4 +43,4 @@ const mapStateToProps = ({ serverListReducers }) => ({
     serverListReducers.selectedInputWhichChangeValues,
 })
 
-export default connect(mapStateToProps)(ValuesOfServerWhichCanBeChanged)
+export default memo(connect(mapStateToProps)(ValuesOfServerWhichCanBeChanged))

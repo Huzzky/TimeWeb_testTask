@@ -7,13 +7,13 @@ const UserNameInViewSelectedServer = ({ selectedServer }) => {
   return (
     <div>
       <LabelValues labelText={'User: '} />
-      <LabelValues labelText={selectedServer.customer_id} />
+      <LabelValues labelText={selectedServer[0].customer_id} />
     </div>
   )
 }
 
 UserNameInViewSelectedServer.propTypes = {
-  selectedServer: PropTypes.object,
+  selectedServer: PropTypes.array,
 }
 
 const mapStateToProps = ({ serverListReducers }) => ({

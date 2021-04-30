@@ -4,11 +4,21 @@ import { connect } from 'react-redux'
 import { optionInputWichChange } from '../../const'
 import { updateValueOfServer } from '../../store/action/updateValuesOfServer'
 
-const BtnForSaveChangeValueServer = ({ value, index, updateValueOfServer }) => {
+const BtnForSaveChangeValueServer = ({
+  value,
+  index,
+  selectedServer,
+  updateValueOfServer,
+}) => {
   return (
     <button
       onClick={() => {
-        updateValueOfServer(index, value[0], optionInputWichChange[2])
+        updateValueOfServer(
+          selectedServer[1],
+          index,
+          value[0],
+          optionInputWichChange[2],
+        )
       }}
     >
       ok
@@ -23,8 +33,14 @@ BtnForSaveChangeValueServer.propTypes = {
 }
 
 const mapToDispatch = (dispatch) => ({
-  updateValueOfServer: (id, type, option) =>
-    dispatch(updateValueOfServer(id, type, option)),
+  updateValueOfServer: (id, index, type, option) =>
+    dispatch(updateValueOfServer(id, index, type, option)),
 })
 
-export default memo(connect(null, mapToDispatch)(BtnForSaveChangeValueServer))
+const mapStateToProps = ({ serverListReducers }) => ({
+  selectedServer: serverListReducers.selectedServer,
+})
+
+export default memo(
+  connect(mapStateToProps, mapToDispatch)(BtnForSaveChangeValueServer),
+)

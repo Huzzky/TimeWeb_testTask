@@ -31,6 +31,7 @@ export const serverListReducers = (
     updateValuesServer,
     idSelectedInputWhichChangeValue,
     typeSelectedInputWhichChangeValue,
+    idServer,
   },
 ) => {
   switch (type) {
@@ -43,7 +44,7 @@ export const serverListReducers = (
       return {
         ...state,
         serverList: [...serverList],
-        selectedServer: updateValuesServer,
+        selectedServer: [updateValuesServer, idSelectedInputWhichChangeValue],
         isErrorRequestToChangeValueServer: false,
         isLoadingRequestToChangeValueServer: false,
       }
@@ -74,7 +75,7 @@ export const serverListReducers = (
     case SELECTION_SERVER_FOR_VIEW:
       return {
         ...state,
-        selectedServer: state.serverList[selectedServerId],
+        selectedServer: [state.serverList[selectedServerId], +selectedServerId],
         pageOpenSelectedServer: true,
         selectedInputWhichChangeValues: ['', ''],
       }

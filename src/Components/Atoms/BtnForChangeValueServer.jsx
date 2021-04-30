@@ -8,7 +8,7 @@ const BtnForChangeValueServer = ({ index, value, updateValueOfServer }) => {
   return (
     <img
       onClick={() => {
-        updateValueOfServer(index, value[0], optionInputWichChange[0])
+        updateValueOfServer(null, index, value[0], optionInputWichChange[0])
       }}
       width="32px"
       height="32px"
@@ -26,8 +26,8 @@ BtnForChangeValueServer.propTypes = {
 }
 
 const mapToDispatch = (dispatch) => ({
-  updateValueOfServer: (id, type, option) =>
-    dispatch(updateValueOfServer(id, type, option)),
+  updateValueOfServer: (id, index, type, option) =>
+    dispatch(updateValueOfServer(id, index, type, option)),
 })
 
 export default memo(connect(null, mapToDispatch)(BtnForChangeValueServer))

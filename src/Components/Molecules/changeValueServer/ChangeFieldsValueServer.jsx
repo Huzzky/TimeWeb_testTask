@@ -10,11 +10,16 @@ const ChangeFieldsValueServer = ({ value, index }) => {
   return (
     <div>
       {value[0] === Object.keys(InputWhichCanBeChanged)[1] ? (
-        <SelectOptionTypesServer />
+        <div>
+          <SelectOptionTypesServer />
+          <BtnForSaveChangeValueServer value={value} index={index} />
+        </div>
       ) : (
-        <InputForChangeValueServer value={value[0]} />
+        <div>
+          <InputForChangeValueServer value={value[0]} />
+          <BtnForSaveChangeValueServer value={value} index={index} />
+        </div>
       )}
-      <BtnForSaveChangeValueServer value={value} index={index} />
       <BtnForCloseFieldsValuesWithoutSave value={value} index={index} />
     </div>
   )

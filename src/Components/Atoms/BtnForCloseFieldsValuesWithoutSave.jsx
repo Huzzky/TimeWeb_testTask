@@ -12,7 +12,7 @@ const BtnForCloseFieldsValuesWithoutSave = ({
   return (
     <button
       onClick={() => {
-        updateValueOfServer(index, value[0], optionInputWichChange[1])
+        updateValueOfServer(null, index, value[0], optionInputWichChange[1])
       }}
     >
       X
@@ -25,8 +25,8 @@ BtnForCloseFieldsValuesWithoutSave.propTypes = {
 }
 
 const mapToDispatch = (dispatch) => ({
-  updateValueOfServer: (id, type, option) =>
-    dispatch(updateValueOfServer(id, type, option)),
+  updateValueOfServer: (id, index, type, option) =>
+    dispatch(updateValueOfServer(id, index, type, option)),
 })
 
 export default memo(

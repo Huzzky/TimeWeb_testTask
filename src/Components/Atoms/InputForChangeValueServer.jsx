@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 
 const InputForChangeValueServer = ({ selectedServer }) => {
   const [valueInServerNameForChange, setValueInServerNameForChange] = useState(
-    selectedServer.server_name,
+    selectedServer[0].server_name,
   )
   return (
     <input
