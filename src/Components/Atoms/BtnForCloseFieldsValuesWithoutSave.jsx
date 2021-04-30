@@ -8,9 +8,11 @@ const BtnForCloseFieldsValuesWithoutSave = ({
   index,
   value,
   updateValueOfServer,
+  isLoading,
 }) => {
   return (
     <button
+      disabled={isLoading ? 'disabled' : ''}
       onClick={() => {
         updateValueOfServer(null, index, value[0], optionInputWichChange[1])
       }}
@@ -24,11 +26,15 @@ BtnForCloseFieldsValuesWithoutSave.propTypes = {
   updateValueOfServer: PropTypes.func,
 }
 
+const mapStateToProps = ({ serverListReducers }) => ({
+  isLoading: serverListReducers.isLoadingRequestToChangeValueServer,
+})
+
 const mapToDispatch = (dispatch) => ({
   updateValueOfServer: (id, index, type, option) =>
     dispatch(updateValueOfServer(id, index, type, option)),
 })
 
 export default memo(
-  connect(null, mapToDispatch)(BtnForCloseFieldsValuesWithoutSave),
+  connect(mapStateToProps, mapToDispatch)(BtnForCloseFieldsValuesWithoutSave),
 )

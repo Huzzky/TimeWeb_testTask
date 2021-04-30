@@ -9,9 +9,11 @@ const BtnForSaveChangeValueServer = ({
   index,
   selectedServer,
   updateValueOfServer,
+  isLoading,
 }) => {
   return (
     <button
+      disabled={isLoading ? 'disabled' : ''}
       onClick={() => {
         updateValueOfServer(
           selectedServer[1],
@@ -39,6 +41,7 @@ const mapToDispatch = (dispatch) => ({
 
 const mapStateToProps = ({ serverListReducers }) => ({
   selectedServer: serverListReducers.selectedServer,
+  isLoading: serverListReducers.isLoadingRequestToChangeValueServer,
 })
 
 export default memo(
