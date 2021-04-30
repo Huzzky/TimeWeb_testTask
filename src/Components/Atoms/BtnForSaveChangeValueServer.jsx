@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { memo } from 'react'
 import { connect } from 'react-redux'
-import { optionInputWichChange } from '../../const'
+import { InputWhichCanBeChanged, optionInputWichChange } from '../../const'
 import { updateValueOfServer } from '../../store/action/updateValuesOfServer'
 
 const BtnForSaveChangeValueServer = ({
@@ -10,6 +10,8 @@ const BtnForSaveChangeValueServer = ({
   index,
   selectedServer,
   updateValueOfServer,
+  serverName,
+  serverType,
 }) => {
   return (
     <button
@@ -20,6 +22,9 @@ const BtnForSaveChangeValueServer = ({
           index,
           value[0],
           optionInputWichChange[2],
+          value[0] === Object.keys(InputWhichCanBeChanged)[0]
+            ? serverName
+            : serverType,
         )
       }}
     >
@@ -31,20 +36,24 @@ const BtnForSaveChangeValueServer = ({
 BtnForSaveChangeValueServer.propTypes = {
   index: PropTypes.number,
   isLoading: PropTypes.bool,
-  recordUserTextToReducer: PropTypes.func,
   selectedServer: PropTypes.array,
   updateValueOfServer: PropTypes.func,
   value: PropTypes.array,
 }
 
 const mapToDispatch = (dispatch) => ({
-  updateValueOfServer: (id, index, type, option) =>
-    dispatch(updateValueOfServer(id, index, type, option)),
+  updateValueOfServer: (id, index, type, option, valueRecord) =>
+    dispatch(updateValueOfServer(id, index, type, option, valueRecord)),
 })
 
-const mapStateToProps = ({ serverListReducers }) => ({
+const mapStateToProps = ({
+  serverListReducers,
+  userActionWithInputsReducer,
+}) => ({
   selectedServer: serverListReducers.selectedServer,
   isLoading: serverListReducers.isLoadingRequestToChangeValueServer,
+  serverName: userActionWithInputsReducer.server_name,
+  serverType: userActionWithInputsReducer.server_type,
 })
 
 export default memo(
