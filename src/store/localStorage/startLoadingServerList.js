@@ -3,7 +3,6 @@ export const serverListStart = () => {
   try {
     data = JSON.parse(localStorage.getItem('data'))
     if (!data) {
-      console.log(4567890)
       data = [
         {
           customer_id: 'user1',

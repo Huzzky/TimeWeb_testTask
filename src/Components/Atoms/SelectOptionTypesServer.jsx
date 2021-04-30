@@ -1,8 +1,9 @@
 import { memo } from 'react'
 import { connect } from 'react-redux'
-import { typesOfServer } from '../../const'
+import { InputWhichCanBeChanged, typesOfServer } from '../../const'
+import { recordUserTextToReducer } from '../../store/action/recordUserTextToReducer'
 
-const SelectOptionTypesServer = ({ isLoading }) => {
+const SelectOptionTypesServer = ({ isLoading, recordUserTextToReducer }) => {
   let optionServerTypeArray = typesOfServer.map((value, index) => {
     return (
       <option key={index} value={value}>
@@ -11,13 +12,29 @@ const SelectOptionTypesServer = ({ isLoading }) => {
     )
   })
   return (
-    <select disabled={isLoading ? 'disabled' : ''}>
+    <select
+      onChange={(e) => {
+        recordUserTextToReducer(
+          e.currentTarget.value,
+          Object.keys(InputWhichCanBeChanged)[1],
+        )
+      }}
+      disabled={isLoading ? 'disabled' : ''}
+    >
       {optionServerTypeArray}
     </select>
   )
 }
+
+const mapToDispatch = (dispatch) => ({
+  recordUserTextToReducer: (string, type) =>
+    dispatch(recordUserTextToReducer(string, type)),
+})
+
 const mapStateToProps = ({ serverListReducers }) => ({
   isLoading: serverListReducers.isLoadingRequestToChangeValueServer,
 })
 
-export default memo(connect(mapStateToProps)(SelectOptionTypesServer))
+export default memo(
+  connect(mapStateToProps, mapToDispatch)(SelectOptionTypesServer),
+)

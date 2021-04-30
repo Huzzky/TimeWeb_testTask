@@ -16,6 +16,11 @@ const SUCCESS_TO_SERVER_FOR_CHANGE_VALUE_SERVER =
 const ERROR_TO_SERVER_FOR_CHANGE_VALUE_SERVER =
   'ERROR_TO_SERVER_FOR_CHANGE_VALUE_SERVER'
 
+const CHANGE_NAME_SERVER = 'CHANGE_NAME_SERVER'
+// const CLEAR_NAME_SERVER = 'ClEAR_NAME_SERVER'
+const CHANGE_TYPE_SERVER = 'CHANGE_TYPE_SERVER'
+// const CLEAR_TYPE_SERVER = 'CLEAR_TYPE_SERVER'
+
 const InputWhichCanBeChanged = {
   server_name: 'server Name',
   server_type: 'server Type',
@@ -26,6 +31,10 @@ const typesOfServer = ['vds', 'dedicated', 'hosting', 'idle']
 const optionInputWichChange = ['open', 'close', 'save']
 
 export {
+  CHANGE_TYPE_SERVER,
+  // CLEAR_TYPE_SERVER,
+  CHANGE_NAME_SERVER,
+  // CLEAR_NAME_SERVER,
   InputWhichCanBeChanged,
   optionInputWichChange,
   typesOfServer,

@@ -5,11 +5,11 @@ import { optionInputWichChange } from '../../const'
 import { updateValueOfServer } from '../../store/action/updateValuesOfServer'
 
 const BtnForSaveChangeValueServer = ({
+  isLoading,
   value,
   index,
   selectedServer,
   updateValueOfServer,
-  isLoading,
 }) => {
   return (
     <button
@@ -30,6 +30,9 @@ const BtnForSaveChangeValueServer = ({
 
 BtnForSaveChangeValueServer.propTypes = {
   index: PropTypes.number,
+  isLoading: PropTypes.bool,
+  recordUserTextToReducer: PropTypes.func,
+  selectedServer: PropTypes.array,
   updateValueOfServer: PropTypes.func,
   value: PropTypes.array,
 }
