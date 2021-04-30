@@ -5,10 +5,15 @@ import {
   SUCCESS_REQUEST_TO_SERVER_FOR_SERVER_LIST,
   OPEN_INPUT_FOR_CHANGE_VALUE_SERVER,
   CLOSE_INPUT_FOR_CHANGE_VALUE_SERVER,
+  REQUEST_TO_SERVER_FOR_CHANGE_VALUE_SERVER,
+  SUCCESS_TO_SERVER_FOR_CHANGE_VALUE_SERVER,
+  ERROR_TO_SERVER_FOR_CHANGE_VALUE_SERVER,
 } from '../../const'
 
 const initialState = {
   isLoading: false,
+  isLoadingRequestToChangeValueServer: false,
+  isErrorRequestToChangeValueServer: false,
   isError: false,
   serverList: [],
   selectedServer: [],
@@ -23,11 +28,31 @@ export const serverListReducers = (
     type,
     serverList,
     selectedServerId,
+    updateValuesServer,
     idSelectedInputWhichChangeValue,
     typeSelectedInputWhichChangeValue,
   },
 ) => {
   switch (type) {
+    case REQUEST_TO_SERVER_FOR_CHANGE_VALUE_SERVER:
+      return {
+        ...state,
+        isLoadingRequestToChangeValueServer: true,
+      }
+    case SUCCESS_TO_SERVER_FOR_CHANGE_VALUE_SERVER:
+      return {
+        ...state,
+        serverList: [...serverList],
+        selectedServer: updateValuesServer,
+        isErrorRequestToChangeValueServer: false,
+        isLoadingRequestToChangeValueServer: false,
+      }
+    case ERROR_TO_SERVER_FOR_CHANGE_VALUE_SERVER:
+      return {
+        ...state,
+        isErrorRequestToChangeValueServer: true,
+        isLoadingRequestToChangeValueServer: false,
+      }
     case OPEN_INPUT_FOR_CHANGE_VALUE_SERVER:
       state.selectedInputWhichChangeValues[
         idSelectedInputWhichChangeValue

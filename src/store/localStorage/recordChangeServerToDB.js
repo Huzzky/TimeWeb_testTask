@@ -6,7 +6,7 @@ const recordChangeServerToDB = (id, type, value) => {
         return JSON.parse(localStorage.getItem('data'))
       }
       let arrayDataWhichChange = [...data()]
-      arrayDataWhichChange[id][type] = value
+      arrayDataWhichChange[id][type] = 'Vladislav'
       try {
         localStorage.setItem('data', JSON.stringify(arrayDataWhichChange))
         resolve(arrayDataWhichChange)

@@ -18,7 +18,8 @@ export const updateValueOfServer = (id, type, option, valueRecord) => {
         .then((res) => {
           dispatch({
             type: SUCCESS_TO_SERVER_FOR_CHANGE_VALUE_SERVER,
-            res: res,
+            serverList: res,
+            updateValuesServer: res[id],
           })
           dispatch({
             type: CLOSE_INPUT_FOR_CHANGE_VALUE_SERVER,

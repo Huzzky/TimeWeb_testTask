@@ -22,6 +22,7 @@ const ValuesOfServerWhichCanBeChanged = ({
           <ChangeFieldsValueServer value={value} index={index} />
         ) : (
           <div>
+            {console.log(selectedServer[value[0]])}
             <LabelValuesServer labelText={selectedServer[value[0]]} />
             <BtnForChangeValueServer value={value} index={index} />
           </div>
@@ -44,4 +45,4 @@ const mapStateToProps = ({ serverListReducers }) => ({
     serverListReducers.selectedInputWhichChangeValues,
 })
 
-export default memo(connect(mapStateToProps)(ValuesOfServerWhichCanBeChanged))
+export default connect(mapStateToProps)(ValuesOfServerWhichCanBeChanged)
