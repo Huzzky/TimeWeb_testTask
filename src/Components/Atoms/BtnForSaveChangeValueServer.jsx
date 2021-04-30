@@ -29,6 +29,7 @@ const BtnForSaveChangeValueServer = ({
       }
       onClick={() => {
         if (error && value[0] === Object.keys(InputWhichCanBeChanged)[0]) {
+          return -1
         } else {
           updateValueOfServer(
             selectedServer[1],

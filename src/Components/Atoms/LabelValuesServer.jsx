@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import { memo } from 'react'
 
-const LabelValuesServer = ({ labelText }) => {
-  return <h3>{labelText}</h3>
+const LabelValuesServer = ({ labelText, className }) => {
+  return <h3 className={className}>{labelText}</h3>
 }
 
 LabelValuesServer.propTypes = {

@@ -5,21 +5,28 @@ import { selectionServerForView } from '../../../store/action/selectionServerFor
 import LabelValuesServer from '../../Atoms/LabelValuesServer'
 import '../../../Assets/_serverList.scss'
 
-const ServerRowForList = ({ serverList, selectServer }) => {
+const ServerRowForList = ({ serverList, selectServer, selectedServer }) => {
   let internalFuncSelectServer = (id) => {
     selectServer(id)
   }
-
   let rowWithServerNameForServersList = serverList.map((value, index) => {
     return (
       <div
-        className="servers-list__servers-container"
+        className={
+          'servers-list__servers-container' +
+          (selectedServer === []
+            ? ''
+            : value === selectedServer[0]
+            ? '--selected'
+            : '')
+        }
         key={index}
         onClick={() => internalFuncSelectServer(index)}
       >
-        <span className="servers-list__server-name">
-          <LabelValuesServer labelText={value.server_name} />
-        </span>
+        <LabelValuesServer
+          className="servers-list__name-server"
+          labelText={value.server_name}
+        />
       </div>
     )
   })
@@ -33,6 +40,7 @@ ServerRowForList.propTypes = {
 
 const mapStateToProps = ({ serverListReducers }) => ({
   serverList: serverListReducers.serverList,
+  selectedServer: serverListReducers.selectedServer,
 })
 
 const mapToDispatch = (dispatch) => ({
