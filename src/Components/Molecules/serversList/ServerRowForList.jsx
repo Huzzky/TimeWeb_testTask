@@ -3,6 +3,7 @@ import { memo } from 'react'
 import { connect } from 'react-redux'
 import { selectionServerForView } from '../../../store/action/selectionServerForView'
 import LabelValuesServer from '../../Atoms/LabelValuesServer'
+import '../../../Assets/_serverList.scss'
 
 const ServerRowForList = ({ serverList, selectServer }) => {
   let internalFuncSelectServer = (id) => {
@@ -11,17 +12,19 @@ const ServerRowForList = ({ serverList, selectServer }) => {
 
   let rowWithServerNameForServersList = serverList.map((value, index) => {
     return (
-      <div key={index} onClick={() => internalFuncSelectServer(index)}>
-        <LabelValuesServer labelText={value.server_name} />
+      <div
+        className="servers-list__servers-container"
+        key={index}
+        onClick={() => internalFuncSelectServer(index)}
+      >
+        <span className="servers-list__server-name">
+          <LabelValuesServer labelText={value.server_name} />
+        </span>
       </div>
     )
   })
-  return (
-    <>
-      {rowWithServerNameForServersList}
-      <hr />
-    </>
-  )
+
+  return <div className="servers-list">{rowWithServerNameForServersList}</div>
 }
 
 ServerRowForList.propTypes = {

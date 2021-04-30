@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import UserNameInViewSelectedServer from './UserNameInViewSelectedServer'
 import ValuesOfServerWhichCanBeChanged from './ValuesOfServerWhichCanBeChanged'
 import LabelValues from '../../Atoms/LabelValuesServer'
+import '../../../Assets/_selectedServer.scss'
 
 const ViewSelectedServer = ({ pageOpenSelectedServer, isError, isLoading }) => {
   return !pageOpenSelectedServer ? (
@@ -11,12 +12,12 @@ const ViewSelectedServer = ({ pageOpenSelectedServer, isError, isLoading }) => {
     ) : isError ? (
       <></>
     ) : (
-      <div>
+      <div className="servers-page__select-server">
         <LabelValues labelText={'Выберите сервер'} />
       </div>
     )
   ) : (
-    <div>
+    <div className="selected-server">
       <UserNameInViewSelectedServer />
       <ValuesOfServerWhichCanBeChanged />
     </div>

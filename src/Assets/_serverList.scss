@@ -1,0 +1,57 @@
+.servers-list {
+    width: 100%;
+    grid-area: 1 / 1 / 2 / 3;
+    background: #03ecec;
+    border-right: 1px solid #19d8d8;
+    -webkit-box-shadow: 12px 2px 16px -2px rgba(34, 60, 80, 0.16);
+    -moz-box-shadow: 12px 2px 16px -2px rgba(34, 60, 80, 0.16);
+    box-shadow: 12px 2px 16px -2px rgba(34, 60, 80, 0.16);
+    border-radius: 0 10px 10px 0;
+    -webkit-border-radius: 0 10px 10px 0;
+    -moz-border-radius: 0 10px 10px 0;
+    -ms-border-radius: 0 10px 10px 0;
+    -o-border-radius: 0 10px 10px 0;
+    display: flex;
+    flex-direction: column;
+
+    &__server-name {
+        font-size: 30px;
+        margin-left: 10%;
+        margin-right: 10%;
+        text-overflow: ellipsis;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    &__servers-container {
+        width: 100%;
+        height: 5em;
+        border-bottom: 1px solid #05cccc;
+        display: flex;
+        align-items: center;
+        padding-top: 3%;
+        padding-bottom: 4%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .servers-list {
+        &__server-name {
+            font-size: 22px;
+            padding-left: 5%;
+        }
+        grid-area: 1 / 1 / 2 / 4;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .servers-list {
+        &__server-name {
+            font-size: 12px;
+            padding-left: 2%;
+        }
+    }
+}

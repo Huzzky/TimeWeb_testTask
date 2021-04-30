@@ -10,21 +10,25 @@ const ValuesOfServerWhichCanBeChanged = ({
   selectedServer,
   selectedInputWhichChangeValues,
 }) => {
+  let fieldDistribution = (value, index) => {
+    return selectedInputWhichChangeValues[0] === value[0] ||
+      selectedInputWhichChangeValues[1] === value[0] ? (
+      <ChangeFieldsValueServer value={value} index={index} />
+    ) : (
+      <div>
+        <LabelValuesServer labelText={selectedServer[0][value[0]]} />
+        <BtnForChangeValueServer value={value} index={index} />
+      </div>
+    )
+  }
+
   let inputWhichCanChangeValuesServer = Object.entries(
     InputWhichCanBeChanged,
   ).map((value, index) => {
     return (
       <div key={index}>
         <LabelValuesServer labelText={value[1]} />
-        {selectedInputWhichChangeValues[0] === value[0] ||
-        selectedInputWhichChangeValues[1] === value[0] ? (
-          <ChangeFieldsValueServer value={value} index={index} />
-        ) : (
-          <div>
-            <LabelValuesServer labelText={selectedServer[0][value[0]]} />
-            <BtnForChangeValueServer value={value} index={index} />
-          </div>
-        )}
+        {fieldDistribution(value, index)}
       </div>
     )
   })

@@ -1,0 +1,15 @@
+.selected-server {
+    grid-area: 1 / 3 / 2 / 11;
+}
+
+@media screen and (max-width: 1200px) {
+    .selected-server {
+        grid-area: 1 / 4 / 2 / 11;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .selected-server {
+        grid-area: 1 / 4 / 2 / 11;
+    }
+}

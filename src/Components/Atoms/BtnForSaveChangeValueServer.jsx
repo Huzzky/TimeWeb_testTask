@@ -12,20 +12,34 @@ const BtnForSaveChangeValueServer = ({
   updateValueOfServer,
   serverName,
   serverType,
+  error,
 }) => {
   return (
     <button
-      disabled={isLoading ? 'disabled' : ''}
+      disabled={
+        isLoading
+          ? 'disabled'
+          : !serverName && value[0] === Object.keys(InputWhichCanBeChanged)[0]
+          ? 'disabled'
+          : serverName.length > 16
+          ? 'disabled'
+          : error && value[0] === Object.keys(InputWhichCanBeChanged)[0]
+          ? 'disabled'
+          : ''
+      }
       onClick={() => {
-        updateValueOfServer(
-          selectedServer[1],
-          index,
-          value[0],
-          optionInputWichChange[2],
-          value[0] === Object.keys(InputWhichCanBeChanged)[0]
-            ? serverName
-            : serverType,
-        )
+        if (error && value[0] === Object.keys(InputWhichCanBeChanged)[0]) {
+        } else {
+          updateValueOfServer(
+            selectedServer[1],
+            index,
+            value[0],
+            optionInputWichChange[2],
+            value[0] === Object.keys(InputWhichCanBeChanged)[0]
+              ? serverName
+              : serverType,
+          )
+        }
       }}
     >
       ok
@@ -37,8 +51,11 @@ BtnForSaveChangeValueServer.propTypes = {
   index: PropTypes.number,
   isLoading: PropTypes.bool,
   selectedServer: PropTypes.array,
+  serverName: PropTypes.string,
+  serverType: PropTypes.string,
   updateValueOfServer: PropTypes.func,
   value: PropTypes.array,
+  error: PropTypes.bool,
 }
 
 const mapToDispatch = (dispatch) => ({
@@ -54,6 +71,7 @@ const mapStateToProps = ({
   isLoading: serverListReducers.isLoadingRequestToChangeValueServer,
   serverName: userActionWithInputsReducer.server_name,
   serverType: userActionWithInputsReducer.server_type,
+  error: userActionWithInputsReducer.error,
 })
 
 export default memo(
