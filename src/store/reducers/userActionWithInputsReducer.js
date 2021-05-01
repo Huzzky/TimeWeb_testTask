@@ -2,11 +2,12 @@ import {
   CHANGE_NAME_SERVER,
   CHANGE_NAME_SERVER_ERROR,
   CHANGE_TYPE_SERVER,
+  typesOfServer,
 } from '../../const'
 
 const initialState = {
   server_name: '',
-  server_type: '',
+  server_type: typesOfServer[0],
   error: false,
 }
 

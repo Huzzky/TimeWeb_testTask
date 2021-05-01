@@ -9,9 +9,11 @@ const BtnForCloseFieldsValuesWithoutSave = ({
   value,
   updateValueOfServer,
   isLoading,
+  className,
 }) => {
   return (
     <button
+      className={className}
       disabled={isLoading ? 'disabled' : ''}
       onClick={() => {
         updateValueOfServer(null, index, value[0], optionInputWichChange[1])

@@ -9,12 +9,17 @@ const InputForChangeValueServer = ({
   selectedServer,
   isLoading,
   recordUserTextToReducer,
+  error,
 }) => {
   const [valueInServerNameForChange, setValueInServerNameForChange] = useState(
     selectedServer[0].server_name,
   )
   return (
     <input
+      className={
+        'change-container__change-input-input' + (error ? '--error' : '')
+      }
+      maxLength="16"
       disabled={isLoading ? 'disabled' : ''}
       value={valueInServerNameForChange}
       onChange={(e) => {
@@ -38,9 +43,13 @@ const mapToDispatch = (dispatch) => ({
     dispatch(recordUserTextToReducer(string, type)),
 })
 
-const mapStateToProps = ({ serverListReducers }) => ({
+const mapStateToProps = ({
+  serverListReducers,
+  userActionWithInputsReducer,
+}) => ({
   selectedServer: serverListReducers.selectedServer,
   isLoading: serverListReducers.isLoadingRequestToChangeValueServer,
+  error: userActionWithInputsReducer.error,
 })
 
 export default memo(

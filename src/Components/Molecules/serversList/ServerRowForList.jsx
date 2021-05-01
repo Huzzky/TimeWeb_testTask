@@ -14,7 +14,7 @@ const ServerRowForList = ({ serverList, selectServer, selectedServer }) => {
       <div
         className={
           'servers-list__servers-container' +
-          (selectedServer === []
+          (!selectedServer
             ? ''
             : value === selectedServer[0]
             ? '--selected'

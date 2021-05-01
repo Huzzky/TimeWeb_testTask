@@ -26,9 +26,16 @@ export const recordUserTextToReducer = (
         })
       }
     } else if (typeInput === Object.keys(InputWhichCanBeChanged)[1]) {
+      console.log(
+        !userNewTypeOrNewNameServerString
+          ? 'vds'
+          : userNewTypeOrNewNameServerString,
+      )
       dispatch({
         type: CHANGE_TYPE_SERVER,
-        userFromInputTypeForServerType: userNewTypeOrNewNameServerString,
+        userFromInputTypeForServerType: !userNewTypeOrNewNameServerString
+          ? 'vds'
+          : userNewTypeOrNewNameServerString,
       })
     }
   }

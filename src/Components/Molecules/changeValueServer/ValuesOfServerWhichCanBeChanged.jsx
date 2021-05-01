@@ -15,9 +15,16 @@ const ValuesOfServerWhichCanBeChanged = ({
       selectedInputWhichChangeValues[1] === value[0] ? (
       <ChangeFieldsValueServer value={value} index={index} />
     ) : (
-      <div>
-        <LabelValuesServer labelText={selectedServer[0][value[0]]} />
-        <BtnForChangeValueServer value={value} index={index} />
+      <div className="value-server__btn-change">
+        <LabelValuesServer
+          className="value-server__value-which-change"
+          labelText={selectedServer[0][value[0]]}
+        />
+        <BtnForChangeValueServer
+          className="value-server__btn-for-change"
+          value={value}
+          index={index}
+        />
       </div>
     )
   }
@@ -26,14 +33,21 @@ const ValuesOfServerWhichCanBeChanged = ({
     InputWhichCanBeChanged,
   ).map((value, index) => {
     return (
-      <div key={index}>
-        <LabelValuesServer labelText={value[1]} />
+      <div className="selected-server__value-server value-server" key={index}>
+        <LabelValuesServer
+          className="value-server__value-denotes"
+          labelText={value[1] + ':'}
+        />
         {fieldDistribution(value, index)}
       </div>
     )
   })
 
-  return <div>{inputWhichCanChangeValuesServer}</div>
+  return (
+    <div className="selected-server__inputs-for-change">
+      {inputWhichCanChangeValuesServer}
+    </div>
+  )
 }
 
 ValuesOfServerWhichCanBeChanged.propTypes = {

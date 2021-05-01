@@ -12,11 +12,14 @@ const ServersListContainer = ({ requestServerList, isError, isLoading }) => {
 
   return isLoading ? (
     <div className="servers-page__loading-block">
-      <LabelValuesServer labelText={'Загрузка'} />
+      <LabelValuesServer
+        className="servers-page__text"
+        labelText={'Загрузка'}
+      />
     </div>
   ) : isError ? (
     <div className="servers-page__error">
-      <LabelValuesServer labelText={'Ошибка'} />
+      <LabelValuesServer className="servers-page__text" labelText={'Ошибка'} />
     </div>
   ) : (
     <ServerRowForList />

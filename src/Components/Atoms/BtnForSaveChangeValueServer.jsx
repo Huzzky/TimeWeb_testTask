@@ -13,9 +13,11 @@ const BtnForSaveChangeValueServer = ({
   serverName,
   serverType,
   error,
+  className,
 }) => {
   return (
     <button
+      className={className}
       disabled={
         isLoading
           ? 'disabled'

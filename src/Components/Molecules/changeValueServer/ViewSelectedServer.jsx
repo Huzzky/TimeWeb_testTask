@@ -13,7 +13,10 @@ const ViewSelectedServer = ({ pageOpenSelectedServer, isError, isLoading }) => {
       <></>
     ) : (
       <div className="servers-page__select-server">
-        <LabelValues labelText={'Выберите сервер'} />
+        <LabelValues
+          className="servers-page__text-to-choice-server"
+          labelText={'Выберите сервер'}
+        />
       </div>
     )
   ) : (

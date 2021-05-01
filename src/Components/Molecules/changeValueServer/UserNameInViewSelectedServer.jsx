@@ -5,9 +5,15 @@ import LabelValues from '../../Atoms/LabelValuesServer'
 
 const UserNameInViewSelectedServer = ({ selectedServer }) => {
   return (
-    <div>
-      <LabelValues labelText={'User: '} />
-      <LabelValues labelText={selectedServer[0].customer_id} />
+    <div className="selected-server__user-name">
+      <LabelValues
+        className="selected-server__user-label"
+        labelText={'User: '}
+      />
+      <LabelValues
+        className="selected-server__user-label"
+        labelText={selectedServer[0].customer_id}
+      />
     </div>
   )
 }

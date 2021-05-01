@@ -6,16 +6,21 @@ import { recordUserTextToReducer } from '../../store/action/recordUserTextToRedu
 const SelectOptionTypesServer = ({ isLoading, recordUserTextToReducer }) => {
   let optionServerTypeArray = typesOfServer.map((value, index) => {
     return (
-      <option key={index} value={value}>
+      <option
+        className="change-container__change-input--option"
+        key={index}
+        value={value}
+      >
         {value}
       </option>
     )
   })
   return (
     <select
+      className={'change-container__change-input-select'}
       onChange={(e) => {
         recordUserTextToReducer(
-          e.currentTarget.value,
+          !e.currentTarget.value ? typesOfServer[1] : e.currentTarget.value,
           Object.keys(InputWhichCanBeChanged)[1],
         )
       }}

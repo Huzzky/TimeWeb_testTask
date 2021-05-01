@@ -8,20 +8,37 @@ import SelectOptionTypesServer from '../../Atoms/SelectOptionTypesServer'
 
 const ChangeFieldsValueServer = ({ value, index }) => {
   return (
-    <div>
+    <>
       {value[0] === Object.keys(InputWhichCanBeChanged)[1] ? (
-        <div>
+        <div className="selected-server__change-container change-container">
           <SelectOptionTypesServer />
-          <BtnForSaveChangeValueServer value={value} index={index} />
+          <BtnForSaveChangeValueServer
+            className="change-container__btn-close--save"
+            value={value}
+            index={index}
+          />
+          <BtnForCloseFieldsValuesWithoutSave
+            className="change-container__btn-close--without-save"
+            value={value}
+            index={index}
+          />
         </div>
       ) : (
-        <div>
+        <div className="selected-server__change-container change-container">
           <InputForChangeValueServer value={value[0]} />
-          <BtnForSaveChangeValueServer value={value} index={index} />
+          <BtnForSaveChangeValueServer
+            className="change-container__btn-close--save"
+            value={value}
+            index={index}
+          />
+          <BtnForCloseFieldsValuesWithoutSave
+            className="change-container__btn-close--without-save"
+            value={value}
+            index={index}
+          />
         </div>
       )}
-      <BtnForCloseFieldsValuesWithoutSave value={value} index={index} />
-    </div>
+    </>
   )
 }
 

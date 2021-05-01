@@ -4,18 +4,21 @@ import { connect } from 'react-redux'
 import { optionInputWichChange } from '../../const'
 import { updateValueOfServer } from '../../store/action/updateValuesOfServer'
 
-const BtnForChangeValueServer = ({ index, value, updateValueOfServer }) => {
+const BtnForChangeValueServer = ({
+  index,
+  value,
+  updateValueOfServer,
+  className,
+}) => {
   return (
-    <img
+    <button
+      className={className}
       onClick={() => {
         updateValueOfServer(null, index, value[0], optionInputWichChange[0])
       }}
-      width="32px"
-      height="32px"
-      src="./pen.svg"
-      alt="Изменить"
-      title="Изменить"
-    ></img>
+    >
+      Изменить
+    </button>
   )
 }
 
