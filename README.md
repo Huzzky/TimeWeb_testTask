@@ -6,6 +6,7 @@
 <img alt="SCSS 4.14.1" src="https://img.shields.io/badge/SCSS-4.14.1-blue"/>
 <br>
 <br>
+<a href="https://huzzky.github.io/TimeWeb_testTask/"><img alt="GitHub Pages" src="https://img.shields.io/badge/GitHub Pages-black"/></a>
 <br>
 ![](https://vk.com/doc284279466_600470030?hash=a7096071e88304fc9b&dl=261d0ebbe34c1744ed&wnd=1&module=im)
 ![](https://vk.com/doc284279466_600470319?hash=08b880afac87eafa88&dl=0e332367ba462be5b4&wnd=1&module=im)
