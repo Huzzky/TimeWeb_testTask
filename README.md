@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+[![CodeFactor](https://www.codefactor.io/repository/github/huzzky/timeweb_testtask/badge)](https://www.codefactor.io/repository/github/huzzky/timeweb_testtask)
+[![DeepScan grade](https://deepscan.io/api/teams/13726/projects/16985/branches/373520/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=13726&pid=16985&bid=373520)
+<br>
+<img alt="React 17.0.1" src="https://img.shields.io/badge/react-17.0.1-blue"/>
+<img alt="Redux 4.1.0" src="https://img.shields.io/badge/redux-4.1.0-blue"/>
+<img alt="SCSS 4.14.1" src="https://img.shields.io/badge/SCSS-4.14.1-blue"/>
+<br>
+<br>
+<br>
+![Alt Text](https://psv4.userapi.com/c536132/u284279466/docs/d51/0c1742fdc402/Novy_proekt.gif?extra=BAhbkDV9GrFE6SS3md5eHWIUe6bK99q9jYQNQY-VUdyYCpluw9zirk6qd5s_EV3kClcYiI7Op5n16QQtJhj3saqaIhVgx02DLk1BUvwntnZ_7Rxjv8RLYBs7cKRiK-n8RiIItueJj5_XuYyojWDRFrRe)
+<br>
+<br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Чтобы запустить нужно использовать `yarn add` или `npm install`
 
-## Available Scripts
+## Затем `yarn start` или `npm start` и запустится на `http://localhost:3000` 
+<br>
 
-In the project directory, you can run:
+## Данные поступают в виде 
+```javascript
+[
+  {
+    customer_id: 'user1',
+    server_name: 'server7',
+    server_type: 'vds'
+  },
+  {
+    customer_id: 'user5',
+    server_name: 'server2',
+    server_type: 'dedicated'
+  },
+  {
+    customer_id: 'user3',
+    server_name: 'server4',
+    server_type: 'hosting'
+  }
+]
+```
 
-### `yarn start`
+```javascript 
+И хранятся в localStorage
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<br>
+<img alt="Telegram" src="https://img.shields.io/badge/huzkky-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" />
