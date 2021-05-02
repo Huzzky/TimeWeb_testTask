@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/TimeWeb_testTask/static/css/main.9d6b288c.chunk.css",
+    "main.js": "/TimeWeb_testTask/static/js/main.687178ae.chunk.js",
+    "main.js.map": "/TimeWeb_testTask/static/js/main.687178ae.chunk.js.map",
+    "runtime-main.js": "/TimeWeb_testTask/static/js/runtime-main.7bc2c6b0.js",
+    "runtime-main.js.map": "/TimeWeb_testTask/static/js/runtime-main.7bc2c6b0.js.map",
+    "static/js/2.0fa0a255.chunk.js": "/TimeWeb_testTask/static/js/2.0fa0a255.chunk.js",
+    "static/js/2.0fa0a255.chunk.js.map": "/TimeWeb_testTask/static/js/2.0fa0a255.chunk.js.map",
+    "index.html": "/TimeWeb_testTask/index.html",
+    "static/css/main.9d6b288c.chunk.css.map": "/TimeWeb_testTask/static/css/main.9d6b288c.chunk.css.map",
+    "static/js/2.0fa0a255.chunk.js.LICENSE.txt": "/TimeWeb_testTask/static/js/2.0fa0a255.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7bc2c6b0.js",
+    "static/js/2.0fa0a255.chunk.js",
+    "static/css/main.9d6b288c.chunk.css",
+    "static/js/main.687178ae.chunk.js"
+  ]
+}
