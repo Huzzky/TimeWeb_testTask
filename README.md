@@ -7,13 +7,14 @@
 <br>
 <br>
 <br>
-![Alt Text](https://psv4.userapi.com/c536132/u284279466/docs/d51/0c1742fdc402/Novy_proekt.gif?extra=BAhbkDV9GrFE6SS3md5eHWIUe6bK99q9jYQNQY-VUdyYCpluw9zirk6qd5s_EV3kClcYiI7Op5n16QQtJhj3saqaIhVgx02DLk1BUvwntnZ_7Rxjv8RLYBs7cKRiK-n8RiIItueJj5_XuYyojWDRFrRe)
+![](https://vk.com/doc284279466_600470030?hash=a7096071e88304fc9b&dl=261d0ebbe34c1744ed&wnd=1&module=im)
+![](https://vk.com/doc284279466_600470319?hash=08b880afac87eafa88&dl=0e332367ba462be5b4&wnd=1&module=im)
 <br>
 <br>
 
-## Чтобы запустить нужно использовать `yarn add` или `npm install`
+### Чтобы запустить нужно использовать `yarn add` или `npm install`
 
-## Затем `yarn start` или `npm start` и запустится на `http://localhost:3000` 
+### Затем `yarn start` или `npm start` и запустится на `http://localhost:3000` 
 <br>
 
 ## Данные поступают в виде 
