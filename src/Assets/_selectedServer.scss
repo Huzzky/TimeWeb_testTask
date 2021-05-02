@@ -20,6 +20,16 @@
                     padding: 10px 10px 10px 10px;
                     border: solid #d5e4e4 2px;
                     text-decoration: none;
+                    &:disabled {
+                        outline: none;
+                        background: rgba(213, 228, 228, 0.5);
+                        cursor: auto;
+                        color: #d5e4e4;
+                        font-size: 16px;
+                        padding: 10px 10px 10px 10px;
+                        border: solid #d5e4e4 2px;
+                        text-decoration: none;
+                    }
                 }
                 &-input {
                     margin-right: 20px;
@@ -32,29 +42,31 @@
                     padding: 10px 10px 10px 10px;
                     border: solid #d5e4e4 2px;
                     text-decoration: none;
+                    &--error {
+                        margin-right: 20px;
+                        background: none;
+                        width: 150px;
+                        border: solid #ff5739 2px;
+                        padding: 10px 10px 10px 10px;
+                        color: #d5e4e4;
+                        font-size: 16px;
+                        text-decoration: none;
+                        background: none;
+                        outline: none;
+                    }
+                    &:disabled {
+                        outline: none;
+                        background: rgba(213, 228, 228, 0.5);
+                        cursor: auto;
+                        color: #d5e4e4;
+                        font-size: 16px;
+                        padding: 10px 10px 10px 10px;
+                        border: solid #d5e4e4 2px;
+                        text-decoration: none;
+                    }
                 }
                 &--option {
                     background: #222429;
-                }
-                &--error {
-                    margin-right: 20px;
-
-                    border: solid #ff5739 2px;
-                    padding: 10px 10px 10px 10px;
-                    color: #d5e4e4;
-                    font-size: 16px;
-                    text-decoration: none;
-                    background: none;
-                    outline: none;
-                }
-                &:disabled {
-                    outline: none;
-                    background: rgba(213, 228, 228, 0.5);
-                    color: #d5e4e4;
-                    font-size: 16px;
-                    padding: 10px 10px 10px 10px;
-                    border: solid #d5e4e4 2px;
-                    text-decoration: none;
                 }
             }
             &__btn-close {
@@ -176,6 +188,10 @@
                     &-input {
                         width: 100px;
                         margin-right: 10px;
+                        &--error {
+                            width: 100px;
+                            margin-right: 10px;
+                        }
                     }
                 }
             }
@@ -212,6 +228,11 @@
                         font-size: 12px;
                         width: 80px;
                         margin-right: 5px;
+                        &--error {
+                            width: 80px;
+                            margin-right: 5px;
+                            font-size: 12px;
+                        }
                     }
                 }
             }
